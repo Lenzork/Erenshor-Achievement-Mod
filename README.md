@@ -39,7 +39,10 @@ This mod adds Achievements into the Game that you can try to complete. It also f
 ## Features
 - [x] Saves for all Characters Individually
 - [x] User Interface to see the Achievements
-- [x] Categorized Achievements 
+- [x] Categorized Achievements
+
+## Interface
+![Interface](https://i.ibb.co/k1JvJHZ/grafik.png)
 
 ## Made with MelonLoader
 <p align="center">
