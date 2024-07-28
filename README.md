@@ -36,6 +36,11 @@ This mod adds Achievements into the Game that you can try to complete. It also f
 * A wonderful Lore
   * Complete 25 Quests
 
+## Features
+- [x] Saves for all Characters Individually
+- [x] User Interface to see the Achievements
+- [x] Categorized Achievements 
+
 ## Made with MelonLoader
 <p align="center">
   <img src="https://melonwiki.xyz/_media/logo.svg" height="20%" width="20%" />
