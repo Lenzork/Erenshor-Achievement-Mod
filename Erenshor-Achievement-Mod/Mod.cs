@@ -15,6 +15,40 @@ namespace Erenshor_Achievement_Mod
 
     public class Mod : MelonMod
     {
+        private static string[] ValidScenes = new string[]
+        {
+            "Stowaway",
+            "Brake",
+            "Bonepits",
+            "Vitheo",
+            "Krakengard",
+            "FernallaField",
+            "SaltedStrand",
+            "Elderstone",
+            "Azure",
+            "Rottenfoot",
+            "Braxonian",
+            "Silkengrass",
+            "Underspine",
+            "Loomingwood",
+            "Duskenlight",
+            "Windwashed",
+            "Blight",
+            "Malaroth",
+            "Braxonia",
+            "Soluna",
+            "Ripper",
+            "Abyssal",
+            "VitheosEnd",
+            "Azynthi",
+            "AzynthiClear",
+            "DuskenPortal",
+            "Rockshade",
+            "ShiveringTomb",
+            "Undercity",
+            "Jaws"
+        };
+
         public override async void OnLateInitializeMelon()
         {
             await Database.CreateLocalDatabase();
@@ -40,7 +74,7 @@ namespace Erenshor_Achievement_Mod
 
         private static bool IsValidScene(string sceneName)
         {
-            return sceneName == "Stowaway";
+            return ValidScenes.Contains(sceneName);
         }
         
         private static async Task LoadupAchievements()
