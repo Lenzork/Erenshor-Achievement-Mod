@@ -55,8 +55,6 @@ This mod adds Achievements into the Game that you can try to complete. It also f
 The Developement for this Mod has been made with MelonLoader which is also required to use this mod.
 
 ## How to Install
-> [!WARNING]
-> This Mod is only Available for the Game Version 0.1 known as the "Erenshor Demo"
 1. [Install MelonLoader](https://melonwiki.xyz/#/?id=automated-installation) 
 2. Download the latest .zip of the Mod in the [releases](https://github.com/Lenzork/Erenshor-Achievement-Mod/releases)
 3. Extract all Files that are in the Zip Folder into your Erenshor Folder.
