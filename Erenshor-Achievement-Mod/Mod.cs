@@ -62,18 +62,14 @@ namespace Erenshor_Achievement_Mod
         public override async void OnFixedUpdate()
         {
 
-            if (Input.GetKeyDown(KeyCode.F3))
-            {
-                await LoadupAchievements();
-            }
 
-            if (Input.GetKeyDown(KeyCode.H))
+            /*if (Input.GetKeyDown(KeyCode.H))
             {
                 foreach (var item in Achievement.loadedAchievements)
                 {
                     item.CompleteAchievement();
                 }
-            }
+            }*/
         }
 
         public override void OnGUI()
