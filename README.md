@@ -5,6 +5,10 @@
 # Erenshor Achievement Mod
 This mod adds Achievements into the Game that you can try to complete. It also features saving the Achievements for each Character individually.
 
+# Requirements
+> [!IMPORTANT]
+> Melonloader Version 0.6.4 is needed
+
 ## Achievement List
 ### Combat
 * First Victory
