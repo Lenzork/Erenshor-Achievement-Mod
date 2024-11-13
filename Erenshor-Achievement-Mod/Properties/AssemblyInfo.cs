@@ -6,6 +6,7 @@ using Erenshor_Achievement_Mod;
 
 [assembly: MelonInfo(typeof(Mod), "Achievement Mod", "1.0.0", "Lenzork")]
 [assembly: MelonGame("Burgee Media", "Erenshor")]
+[assembly: VerifyLoaderVersion(0, 6, 4)]
 
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,

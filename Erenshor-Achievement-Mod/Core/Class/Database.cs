@@ -5,6 +5,7 @@ using MelonLoader;
 using static Erenshor_Achievement_Mod.Core.Class.Achievement;
 using System.IO;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Erenshor_Achievement_Mod.Core.Class
 {
@@ -14,23 +15,6 @@ namespace Erenshor_Achievement_Mod.Core.Class
         {
             if (!File.Exists("Achievements.db"))
                 Melon<Mod>.Logger.BigError("Achievements.db was not found. Please download the newest Version from the Github.");
-                return;
-
-            /*SQLiteConnection.CreateFile("Achievements.db");
-
-            string connectionString = "Data Source=Achievements.db;Version=3;";
-            using (SQLiteConnection m_dbConnection = new SQLiteConnection(connectionString))
-            {
-                await m_dbConnection.OpenAsync();
-
-                string sql = "CREATE TABLE IF NOT EXISTS achievements (id INTEGER PRIMARY KEY AUTOINCREMENT, displayName varchar(20), name varchar(20), description varchar(20), amount int, rewardedAchievementPoints int, category int, completed bool); " +
-                             "CREATE TABLE IF NOT EXISTS characters (id INTEGER PRIMARY KEY AUTOINCREMENT, characterName varchar(20)); " +
-                             "CREATE TABLE IF NOT EXISTS characters_achievements (characterId int, achievementId int)";
-                using (SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection))
-                {
-                    await command.ExecuteNonQueryAsync();
-                }
-            }*/
         }
 
         public static async Task InsertNewCharacterEntry(string characterName)
@@ -103,7 +87,6 @@ namespace Erenshor_Achievement_Mod.Core.Class
             MelonEvents.OnGUI.Subscribe(AchievementWindow.DrawAchievementLoadingText, 100);
 
             string connectionString = "Data Source=Achievements.db;Version=3;";
-            Dictionary<int, bool> completedAchievements = new Dictionary<int, bool>();
 
             using (SQLiteConnection m_dbConnection = new SQLiteConnection(connectionString))
             {
