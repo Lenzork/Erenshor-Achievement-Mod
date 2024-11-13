@@ -7,7 +7,7 @@ This mod adds Achievements into the Game that you can try to complete. It also f
 
 # Requirements
 > [!IMPORTANT]
-> Melonloader Version 0.6.4 is needed
+> Melonloader Version >= 0.6.4 is needed
 
 ## Achievement List
 ### Combat
