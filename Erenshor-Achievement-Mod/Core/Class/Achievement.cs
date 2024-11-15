@@ -10,7 +10,7 @@ namespace Erenshor_Achievement_Mod.Core.Class
     internal class Achievement
     {
         // Stores all Achievements
-        public static List<Achievement> loadedAchievements = new List<Achievement>();
+        public static readonly List<Achievement> loadedAchievements = new List<Achievement>();
         private static int GainedAchievementPoints = 0;
 
         public int Id {  get; set; }
@@ -21,19 +21,6 @@ namespace Erenshor_Achievement_Mod.Core.Class
         public int Amount { get; set; }
         public AchievementCategory Category { get; set; }
         private bool Completed { get; set; }
-
-        /*public Achievement(AchievementJson achievementJson)
-        {
-            DisplayName = achievementJson.DisplayName;
-            Name = achievementJson.Name;
-            RewardedAchievementPoints = achievementJson.RewardedAchievementPoints;
-            Description = achievementJson.Description;
-            Amount = achievementJson.Amount;
-            Category = (AchievementCategory)achievementJson.Category;
-            Completed = achievementJson.Completed;
-
-            initTrigger(Category);
-        }*/
 
         public Achievement(int id, string displayName, string name, string description, int amount, int rewardedAchievementPoints, AchievementCategory category)
         {
@@ -72,12 +59,12 @@ namespace Erenshor_Achievement_Mod.Core.Class
             }
         }
 
-        public void CompleteAchievement()
+        public async Task CompleteAchievement()
         {
             UpdateSocialLog.LogAdd($"Achievement {DisplayName} completed. You received {RewardedAchievementPoints} Achievement Points!", "yellow");
             Completed = true;
-            GainedAchievementPoints += RewardedAchievementPoints;
-            Database.InsertCompletedAchievement(GameObject.Find("Player").GetComponent<Stats>().MyName, Id);
+            SetGainedAchievementPoints(GetGainedAchievementPoints() + RewardedAchievementPoints);
+            await Database.InsertCompletedAchievement(GameObject.Find("Player").GetComponent<Stats>().MyName, Id);
         }
 
         public bool IsCompleted()

@@ -9,9 +9,9 @@ using UnityEngine;
 
 namespace Erenshor_Achievement_Mod.Core.Class
 {
-    internal class Database
+    static class Database
     {
-        public static async Task CreateLocalDatabase()
+        public static void CreateLocalDatabase()
         {
             if (!File.Exists("Achievements.db"))
                 Melon<Mod>.Logger.BigError("Achievements.db was not found. Please download the newest Version from the Github.");
@@ -128,7 +128,7 @@ namespace Erenshor_Achievement_Mod.Core.Class
 
                                 if (isCompleted)
                                 {
-                                    achievement.CompleteAchievement();
+                                    await achievement.CompleteAchievement();
                                 }
 
                                 Achievement.loadedAchievements.Add(achievement);

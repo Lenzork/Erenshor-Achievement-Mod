@@ -4,9 +4,9 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Erenshor_Achievement_Mod;
 
-[assembly: MelonInfo(typeof(Mod), "Achievement Mod", "1.0.0", "Lenzork")]
+[assembly: MelonInfo(typeof(Mod), "Achievement Mod", "1.1.1", "Lenzork")]
 [assembly: MelonGame("Burgee Media", "Erenshor")]
-[assembly: VerifyLoaderVersion(0, 6, 4)]
+[assembly: VerifyLoaderVersion(0, 6, 4, true)]
 
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,

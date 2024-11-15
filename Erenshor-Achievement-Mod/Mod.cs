@@ -11,8 +11,6 @@ using UnityEngine;
 
 namespace Erenshor_Achievement_Mod
 {
-    //TODO: MAYBE SQLITE VERWENDEN FÜR DATENBANK UND EINEN TABLE FÜR DIE ACHIEVEMENTS MACHEN & EINE FÜR DIE PLAYERS WELCHE DIE ACHIEVEMENTS ABSCHLIEßEN
-
     public class Mod : MelonMod
     {
         private static string[] ValidScenes = new string[]
@@ -49,9 +47,9 @@ namespace Erenshor_Achievement_Mod
             "Jaws"
         };
 
-        public override async void OnLateInitializeMelon()
+        public override void OnLateInitializeMelon()
         {
-            await Database.CreateLocalDatabase();
+            Database.CreateLocalDatabase();
         }
 
         public override async void OnSceneWasLoaded(int buildIndex, string sceneName)
@@ -91,19 +89,6 @@ namespace Erenshor_Achievement_Mod
 
                 MelonEvents.OnGUI.Subscribe(AchievementWindow.DrawAchievementButton, 100);
             }
-        }
-
-        public override async void OnFixedUpdate()
-        {
-
-
-            /*if (Input.GetKeyDown(KeyCode.H))
-            {
-                foreach (var item in Achievement.loadedAchievements)
-                {
-                    item.CompleteAchievement();
-                }
-            }*/
         }
 
         public override void OnGUI()

@@ -10,7 +10,7 @@ namespace Erenshor_Achievement_Mod.Core.Class
     internal class AchievementWindow
     {
         private static bool showAchievementWindow = false;
-        private static Rect windowRect = new Rect(20, 20, 600, 600);  // Größere Fenstergröße
+        private static Rect windowRect = new Rect(20, 20, 600, 600);
         private static Achievement.AchievementCategory selectedCategory = Achievement.AchievementCategory.Combat;
 
         public static void DrawAchievementButton()
@@ -88,13 +88,13 @@ namespace Erenshor_Achievement_Mod.Core.Class
                 GUILayout.Label($"Points: {achievement.RewardedAchievementPoints}", GUILayout.Width(100));
                 GUILayout.EndHorizontal();
 
-                GUILayout.Space(10);  // Abstand zwischen Name und Beschreibung
+                GUILayout.Space(10);
 
                 GUILayout.Label(achievement.Description);
 
                 GUILayout.EndVertical();
 
-                GUILayout.Space(10);  // Abstand zwischen Achievements
+                GUILayout.Space(10);
 
                 GUI.color = originalColor;
             }
