@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Erenshor_Achievement_Mod;
 
-[assembly: MelonInfo(typeof(Mod), "Achievement Mod", "1.1.1", "Lenzork")]
+[assembly: MelonInfo(typeof(Mod), "Achievement Mod", "1.1.2", "Lenzork")]
 [assembly: MelonGame("Burgee Media", "Erenshor")]
 [assembly: VerifyLoaderVersion(0, 6, 4, true)]
 

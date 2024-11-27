@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using MelonLoader;
 using static Erenshor_Achievement_Mod.Core.Class.Achievement;
 using System.IO;
 using System.Threading.Tasks;
-using UnityEngine;
 
 namespace Erenshor_Achievement_Mod.Core.Class
 {

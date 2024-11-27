@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MelonLoader;
+﻿using System.Collections.Generic;
 using HarmonyLib;
 using UnityEngine;
 
@@ -12,8 +7,10 @@ namespace Erenshor_Achievement_Mod.Core.Class
     internal static class CombatAchievement 
     {
 
-        public static List<Achievement> checkingAchievements = new List<Achievement>();
+        private static List<Achievement> checkingAchievements = new List<Achievement>();
         private static int kills = 0;
+
+        public static List<Achievement> CheckingAchievements { get => checkingAchievements; set => checkingAchievements = value; }
 
         // Everything regarding to Combat Achievements
         [HarmonyPatch(typeof(Character), "DoDeath")]
@@ -24,7 +21,7 @@ namespace Erenshor_Achievement_Mod.Core.Class
                 if (!__instance.isNPC)
                     return;
 
-                if (!(__instance.gameObject.GetComponent<NPC>().AggroTable[0].Player == GameObject.Find("Player").GetComponent<Character>())) 
+                if (__instance.gameObject.GetComponent<NPC>().AggroTable[0].Player != GameObject.Find("Player").GetComponent<Character>()) 
                     return;
 
                 if (__instance.Alive)
@@ -35,7 +32,7 @@ namespace Erenshor_Achievement_Mod.Core.Class
                 // Check for Kill Achievements
                 foreach (var ach in checkingAchievements)
                 {
-                    if(ach.Amount <= kills && ach.IsCompleted() == false)
+                    if(ach.Amount <= kills && !ach.IsCompleted())
                     {
                         // Unique Checks
                         switch(ach.Name)

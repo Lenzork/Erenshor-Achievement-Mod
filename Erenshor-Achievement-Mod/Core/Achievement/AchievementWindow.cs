@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using UnityEngine;
 
 namespace Erenshor_Achievement_Mod.Core.Class
 {
-    internal class AchievementWindow
+    static class AchievementWindow
     {
         private static bool showAchievementWindow = false;
         private static Rect windowRect = new Rect(20, 20, 600, 600);

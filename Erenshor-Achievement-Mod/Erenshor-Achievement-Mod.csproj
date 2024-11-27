@@ -90,15 +90,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Class\Achievement.cs" />
-    <Compile Include="Core\Class\AchievementData.cs" />
-    <Compile Include="Core\Class\AchievementStruct.cs" />
-    <Compile Include="Core\Class\AchievementWindow.cs" />
-    <Compile Include="Core\Class\Category.cs" />
-    <Compile Include="Core\Class\CharacterAchievement.cs" />
-    <Compile Include="Core\Class\CombatAchievement.cs" />
-    <Compile Include="Core\Class\Database.cs" />
-    <Compile Include="Core\Class\QuestAchievement.cs" />
+    <Compile Include="Core\Achievement\Achievement.cs" />
+    <Compile Include="Core\Achievement\AchievementData.cs" />
+    <Compile Include="Core\Achievement\AchievementStruct.cs" />
+    <Compile Include="Core\Achievement\AchievementWindow.cs" />
+    <Compile Include="Core\Achievement\Patches\CharacterAchievement.cs" />
+    <Compile Include="Core\Achievement\Patches\CombatAchievement.cs" />
+    <Compile Include="Core\Achievement\Patches\QuestAchievement.cs" />
+    <Compile Include="Core\Category.cs" />
+    <Compile Include="Core\Database.cs" />
+    <Compile Include="Core\SceneValidator.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

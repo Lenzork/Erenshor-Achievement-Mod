@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -48,13 +45,13 @@ namespace Erenshor_Achievement_Mod.Core.Class
             switch(category)
             {
                 case AchievementCategory.Combat:
-                    CombatAchievement.checkingAchievements.Add(this);
+                    CombatAchievement.CheckingAchievements.Add(this);
                     break;
                 case AchievementCategory.Character:
-                    CharacterAchievement.checkingAchievements.Add(this);
+                    CharacterAchievement.CheckingAchievements.Add(this);
                     break;
                 case AchievementCategory.Quests:
-                    QuestAchievement.checkingAchievements.Add(this);
+                    QuestAchievement.CheckingAchievements.Add(this);
                     break;
             }
         }
