@@ -56,12 +56,12 @@ namespace Erenshor_Achievement_Mod.Core.Class
             }
         }
 
-        public async Task CompleteAchievement()
+        public void CompleteAchievement()
         {
             UpdateSocialLog.LogAdd($"Achievement {DisplayName} completed. You received {RewardedAchievementPoints} Achievement Points!", "yellow");
             Completed = true;
             SetGainedAchievementPoints(GetGainedAchievementPoints() + RewardedAchievementPoints);
-            await Database.InsertCompletedAchievement(GameObject.Find("Player").GetComponent<Stats>().MyName, Id);
+            Database.InsertCompletedAchievement(GameObject.Find("Player").GetComponent<Stats>().MyName, Id);
         }
 
         public bool IsCompleted()

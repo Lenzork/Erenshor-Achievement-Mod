@@ -126,7 +126,7 @@ namespace Erenshor_Achievement_Mod.Core.Class
 
                                 if (isCompleted)
                                 {
-                                    await achievement.CompleteAchievement();
+                                    achievement.CompleteAchievement();
                                 }
 
                                 Achievement.loadedAchievements.Add(achievement);
