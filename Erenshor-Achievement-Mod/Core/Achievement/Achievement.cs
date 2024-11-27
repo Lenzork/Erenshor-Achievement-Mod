@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -10,7 +7,7 @@ namespace Erenshor_Achievement_Mod.Core.Class
     internal class Achievement
     {
         // Stores all Achievements
-        public static List<Achievement> loadedAchievements = new List<Achievement>();
+        public static readonly List<Achievement> loadedAchievements = new List<Achievement>();
         private static int GainedAchievementPoints = 0;
 
         public int Id {  get; set; }
@@ -21,19 +18,6 @@ namespace Erenshor_Achievement_Mod.Core.Class
         public int Amount { get; set; }
         public AchievementCategory Category { get; set; }
         private bool Completed { get; set; }
-
-        /*public Achievement(AchievementJson achievementJson)
-        {
-            DisplayName = achievementJson.DisplayName;
-            Name = achievementJson.Name;
-            RewardedAchievementPoints = achievementJson.RewardedAchievementPoints;
-            Description = achievementJson.Description;
-            Amount = achievementJson.Amount;
-            Category = (AchievementCategory)achievementJson.Category;
-            Completed = achievementJson.Completed;
-
-            initTrigger(Category);
-        }*/
 
         public Achievement(int id, string displayName, string name, string description, int amount, int rewardedAchievementPoints, AchievementCategory category)
         {
@@ -61,13 +45,13 @@ namespace Erenshor_Achievement_Mod.Core.Class
             switch(category)
             {
                 case AchievementCategory.Combat:
-                    CombatAchievement.checkingAchievements.Add(this);
+                    CombatAchievement.CheckingAchievements.Add(this);
                     break;
                 case AchievementCategory.Character:
-                    CharacterAchievement.checkingAchievements.Add(this);
+                    CharacterAchievement.CheckingAchievements.Add(this);
                     break;
                 case AchievementCategory.Quests:
-                    QuestAchievement.checkingAchievements.Add(this);
+                    QuestAchievement.CheckingAchievements.Add(this);
                     break;
             }
         }
@@ -76,7 +60,7 @@ namespace Erenshor_Achievement_Mod.Core.Class
         {
             UpdateSocialLog.LogAdd($"Achievement {DisplayName} completed. You received {RewardedAchievementPoints} Achievement Points!", "yellow");
             Completed = true;
-            GainedAchievementPoints += RewardedAchievementPoints;
+            SetGainedAchievementPoints(GetGainedAchievementPoints() + RewardedAchievementPoints);
             Database.InsertCompletedAchievement(GameObject.Find("Player").GetComponent<Stats>().MyName, Id);
         }
 

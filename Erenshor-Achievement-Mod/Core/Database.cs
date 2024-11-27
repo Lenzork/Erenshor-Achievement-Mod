@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using MelonLoader;
 using static Erenshor_Achievement_Mod.Core.Class.Achievement;
 using System.IO;
 using System.Threading.Tasks;
-using UnityEngine;
 
 namespace Erenshor_Achievement_Mod.Core.Class
 {
-    internal class Database
+    static class Database
     {
-        public static async Task CreateLocalDatabase()
+        public static void CreateLocalDatabase()
         {
             if (!File.Exists("Achievements.db"))
                 Melon<Mod>.Logger.BigError("Achievements.db was not found. Please download the newest Version from the Github.");
