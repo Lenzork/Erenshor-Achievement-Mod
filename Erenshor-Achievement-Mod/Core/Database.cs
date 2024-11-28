@@ -4,6 +4,7 @@ using MelonLoader;
 using static Erenshor_Achievement_Mod.Core.Class.Achievement;
 using System.IO;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Erenshor_Achievement_Mod.Core.Class
 {
@@ -13,6 +14,22 @@ namespace Erenshor_Achievement_Mod.Core.Class
         {
             if (!File.Exists("Achievements.db"))
                 Melon<Mod>.Logger.BigError("Achievements.db was not found. Please download the newest Version from the Github.");
+        }
+
+        public static async Task LoadupAchievements()
+        {
+            // Load up all Achievements
+            if (File.Exists("Achievements.db"))
+            {
+
+                if (Achievement.loadedAchievements.Count <= 0)
+                    await Database.FetchAchievements(GameObject.Find("Player").GetComponent<Stats>().MyName);
+
+                // Insert Character into Database
+                await Database.InsertNewCharacterEntry(GameObject.Find("Player").GetComponent<Stats>().MyName);
+
+                MelonEvents.OnGUI.Subscribe(AchievementWindow.DrawAchievementButton, 100);
+            }
         }
 
         public static async Task InsertNewCharacterEntry(string characterName)
